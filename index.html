@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+      <!--Bootstrap  css -->
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Bootstrap  js -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>    
+<script src="js/myscript.js"></script>
+
+
+</head>
+<body ng-app="MyApp" ng-controller="MyCtrl">
+   <div class="container">
+   
+    <div class="jumbotron py-3">
+
+        <!--Trying Logo-->
+        <div style="background-color:#fcfbf7" align="center">
+            <br>  <h1 style="color:white"><img src="img/nihal.jpg" width="45%"></h1><br>
+        
+            </div>
+
+        <!--Logo-->
+    <h1 class="text-center">{{title}}</h1>
+    <p class="pt-3">The coronavirus COVID-19 is affecting 217 countries and territories around the world and 2 international conveyances. The day is reset after midnight GMT+0. The list of countries and territories and their continental regional classification is based on the United Nations Geoscheme. Sources are provided under "Latest Updates". </p>
+
+  <!-- all data -->
+
+  <div class="row text-center">
+      <div class="col-md-4">
+      <div class="card bg-warning text-white">
+      <div class="card-body">
+          <h3>Confirm Cases</h3>
+          <h3>{{all_data.confirmed.value}}</h3>
+      </div>
+  </div>
+</div>
+  <div class="col-md-4">
+    <div class="card bg-success text-white">
+        <div class="card-body">
+            <h3>Recoverd Cases</h3>
+            <h3>{{all_data.recovered.value}}</h3>
+        </div>
+    </div>
+  </div>
+
+<div class="col-md-4">
+    <div class="card bg-danger text-white">
+        <div class="card-body">
+            <h3>DeathCases</h3>
+            <h3>{{all_data.deaths.value}}</h3>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- End -->
+
+<input type = "text" class= "form-control mt-4" placeholder="Enter Country Name"
+ng-model="Country"
+ng-change="get_Country_data()"
+
+
+/>
+<!--Country Data-->
+
+<div class="container-fluid" ng-if="Country_data">
+<h1 class="text-center mt-4 text-uppercase">{{Country}} Status</h1>
+<div class="row text-center mt-4" >
+    <div class="col-md-4">
+    <div class="card bg-warning text-white">
+    <div class="card-body">
+        <h3>Confirm Cases</h3>
+        <h3>{{Country_data.confirmed.value}}</h3>
+    </div>
+</div>
+</div>
+<div class="col-md-4">
+  <div class="card bg-success text-white">
+      <div class="card-body">
+          <h3>Recoverd Cases</h3>
+          <h3>{{Country_data.recovered.value}}</h3>
+      </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card bg-danger text-white">
+      <div class="card-body">
+          <h3>DeathCases</h3>
+          <h3>{{Country_data.deaths.value}}</h3>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- End country data-->
+
+
+
+    
+
+</body>
+</html>
